@@ -1,0 +1,96 @@
+#include <stdio.h>
+
+/*
+    Programa: Movimentação das peças de Xadrez
+    Nível: Novato
+    Objetivo: Simular os movimentos da Torre, Bispo e Rainha usando
+               diferentes estruturas de repetição (for, while, do-while)
+    Autor: [Seu Nome]
+    Data: [Data de hoje]
+*/
+
+int main() {
+
+    // ==========================
+    // MOVIMENTO DA TORRE (for)
+    // ==========================
+    // A torre move-se em linha reta, horizontal ou vertical.
+    // Neste exemplo, ela se moverá 5 casas para a direita.
+    printf("Movimento da Torre:\n");
+
+    int i; // variável de controle do loop
+    for (i = 1; i <= 5; i++) {
+        printf("Direita (%d)\n", i);
+    }
+
+    printf("\n"); // linha em branco para separar as peças
+
+
+    // ==========================
+    // MOVIMENTO DO BISPO (while)
+    // ==========================
+    // O bispo move-se nas diagonais.
+    // Neste exemplo, ele se moverá 5 casas para cima e à direita.
+    printf("Movimento do Bispo:\n");
+
+    int j = 1; // variável de controle do loop
+    while (j <= 5) {
+        printf("Cima, Direita (%d)\n", j);
+        j++;
+    }
+
+    printf("\n"); // linha em branco para separar as peças
+
+
+    // ==========================
+    // MOVIMENTO DA RAINHA (do-while)
+    // ==========================
+    // A rainha move-se em todas as direções.
+    // Neste exemplo, ela se moverá 8 casas para a esquerda.
+    printf("Movimento da Rainha:\n");
+
+    int k = 1; // variável de controle do loop
+    do {
+        printf("Esquerda (%d)\n", k);
+        k++;
+    } while (k <= 8);
+
+
+// ==========================
+    // MOVIMENTO DO CAVALO (loops aninhados)
+    // ==========================
+    /*
+        O Cavalo move-se em "L":
+        - Duas casas em uma direção (ex: para baixo)
+        - Uma casa perpendicular (ex: para a esquerda)
+        Neste desafio: duas casas para baixo e uma para a esquerda.
+
+        Utilizaremos loops aninhados:
+        - Loop externo (for): controla o movimento "para baixo" (duas vezes)
+        - Loop interno (while): controla o movimento "para a esquerda" (uma vez)
+    */
+
+    printf("Movimento do Cavalo:\n");
+
+    int movimentoBaixo = 2;   // número de casas para baixo
+    int movimentoEsquerda = 1; // número de casas para esquerda
+
+    // Loop externo (for): move o cavalo para baixo
+    for (int baixo = 1; baixo <= movimentoBaixo; baixo++) {
+        printf("Baixo (%d)\n", baixo);
+    }
+
+    // Linha em branco para separar etapas
+    printf("--- Mudando de direção ---\n");
+
+    // Loop interno (while): move o cavalo para esquerda
+    int esquerda = 1;
+    while (esquerda <= movimentoEsquerda) {
+        printf("Esquerda (%d)\n", esquerda);
+        esquerda++;
+    }
+
+    printf("\nFim da simulação.\n");
+
+    return 0;
+}
